@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="container">
+        <div class="leagues-container col-xs-6 col-xs-offset-3">
+            <h1>Football Competitions</h1>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>no</th>
+                    <th>Competition Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="league in cCtrl.Competitions">
+                    <td>{{$index +1 }}</td>
+                    <td><a ng-href="/{{league.id}}">{{league.caption}}</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

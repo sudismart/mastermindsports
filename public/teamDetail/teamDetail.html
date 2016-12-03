@@ -1,0 +1,45 @@
+<h1 class="text-center"><u>{{tdCtrl.name}}</u></h1>
+<div class="row team-cointainer">
+    <div class="container">
+        <h3 class="text-center">Players List</h3>
+        <div class="col-xs-2 " ng-repeat="player in tdCtrl.players.players">
+            <div class="image-container">
+                <img src="/images/avatar.png" alt="player images"/>
+                <hr/>
+                <h5>{{player.name}}</h5>
+                <p>{{player.position}}</p>
+            </div>
+        </div>
+        <div ng-if="tdCtrl.players.count == 0">
+            <h4 class="text-center">No players are listed..</h4>
+        </div>
+    </div>
+</div>      
+<div class="row">
+    <div class="container">
+        <h3>Team Fixture</h3>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>MatchDay No.</td>
+                    <td>vs</td>
+                    <td>Time to go</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fixt in tdCtrl.fixture.fixtures | filter: tdCtrl.filterFinished">
+
+                    <td>{{fixt.matchday}}</td>
+                    <td>{{fixt.homeTeamName}} vs {{fixt.awayTeamName}}</td>
+                    <td>
+                        <div class='time-to'>
+
+                            <span countdown='' date='January 1, 2017 12:00:00'>&nbsp;</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
